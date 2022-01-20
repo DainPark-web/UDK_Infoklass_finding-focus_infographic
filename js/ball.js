@@ -1,10 +1,14 @@
 class Ball {
-    constructor(){
-        this.pos = createVector(10, 10);
+    constructor(i, size){
+        this.pos = createVector(50, (20 * i) + size);
+        this.size = size;
     }
 
     draw(){
-        circle(this.pos.x, this.pos.y, 10);
+        strokeWeight(1);
+        stroke(255);
+        fill(0);
+        circle(this.pos.x, this.pos.y, this.size);
     }
 
     update(){
