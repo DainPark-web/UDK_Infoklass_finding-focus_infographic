@@ -1,6 +1,6 @@
 class Ball {
-    constructor(i, size){
-        this.pos = createVector(50, (20 * i) + size);
+    constructor(dis, size){
+        this.pos = createVector(50, dis);
         this.size = size;
     }
 
