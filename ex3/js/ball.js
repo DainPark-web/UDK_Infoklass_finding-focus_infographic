@@ -4,21 +4,24 @@ class Ball {
         this.size = size;
     }
 
-    draw(j, i, d){
+    draw(j, i, d, max, min){
         push();
-        colorMode(HSB, 400);
+        colorMode(RGB, 255);
         // strokeWeight(1);
         // stroke(0); 
         noStroke();
-        if(d){
-            fill(0);
-            textSize(7);
-            
-            // text(time[i].slice(5), this.pos.x *i + (i < 12 ? 260 : 350 ) , this.pos.y * j +110 - (this.size/2 + 10)); 
-        }
+        
         
         // fill(d ? 200 : 240 , 0, d ? 250 : 0 , 80);
-        fill(0, 60);
+        if(max === this.size){
+
+            fill(250, 100, 150, 200);
+        }else if(min === this.size){
+            fill(0, 50, 150, 200);
+
+        }else{
+            fill(0, 0, 0,40);
+        }
         // noFill();
         
         circle(this.pos.x *i + (i < 12 ? 300 : 380 ), this.pos.y * j + 120 , this.size);

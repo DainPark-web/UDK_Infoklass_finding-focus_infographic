@@ -85,6 +85,9 @@ let ballSizeN = 6;
 
 
 let testList = [];
+let min =0;
+let max = 0;
+
 function setup(){
     let cnv =createCanvas(WIDTH, HEIGHT);
     cnv.parent(Con);
@@ -93,7 +96,7 @@ function setup(){
     
     for(let j = 0; j< data.length; j++){
     for(let i = 0; i< data[j].a.length; i++){
-        let size = (abs(data[j].a[i] - 100) * ballSizeN);
+        let size = ((data[j].a[i] - 100) * ballSizeN);
         const prevDis = (abs(data[j].a[i - 1] - 100) * ballSizeN)/2;
         const newPrevDis = data[j].a[i-1] === undefined ? 0 : prevDis;
         const currDis = (abs(data[j].a[i] - 100) * ballSizeN)/2;
@@ -108,7 +111,7 @@ function setup(){
     testList[j] = balls;
     balls = [];
     }
-    console.log(testList)
+    // console.log(testList)
     
     push();
     colorMode(RGB, 255);
@@ -135,10 +138,22 @@ function setup(){
     }
     for(let j = 0; j< testList.length; j++){  
         textSize(15);
-        text(nameA[j], 50, 55 * j + 125);    
+        text(nameA[j], 50, 55 * j + 125); 
+        const n = data[j].a.sort(function(a, b) {
+            return a - b;
+          });
+        // console.log(n[0]);
+        min = n[0];
+        max = n[n.length-1];
+        min = (min - 100) * ballSizeN;
+        max = (max - 100) * ballSizeN;
+        // console.log(n);
+        console.log(max, min);
     for(let i = 0; i < testList[j].length; i++){
         let d = i % 3 === 0;
-        testList[j][i].draw(j, i, d);
+        
+        // console.log(min);
+        testList[j][i].draw(j, i, d, max, min);
         
     }
     
