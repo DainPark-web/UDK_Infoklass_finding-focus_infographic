@@ -21,7 +21,7 @@ class Ball {
         fill(0, 60);
         // noFill();
         
-        circle(this.pos.x *i + (i < 12 ? 300 : 380 ), this.pos.y * j + 110 , this.size);
+        circle(this.pos.x *i + (i < 12 ? 300 : 380 ), this.pos.y * j + 120 , this.size);
         pop();
         
     }

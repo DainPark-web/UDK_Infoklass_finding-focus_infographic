@@ -118,6 +118,7 @@ function setup(){
 
         textSize(18);
         text("2020", 300 + (50 * 11)/2 , 40);
+        text("2021",(( 300 + (50 * 11)/2) * 2) + 80 , 40);
     for(let i = 0; i < 12; i++){
         stroke(0);
         line(50 * i + 300, 75, 50 * i + 300, 90);
@@ -125,9 +126,16 @@ function setup(){
         textSize(15);
         text(`${ye[i]} ${i > 3 && i < 7 ? "" : "."}`, 50 * i + 295 , 70);
     }
+    for(let i = 0; i < 11; i++){
+        stroke(0);
+        line( (50 * i + (300 + 50 * 12)) + 80, 75, (50 * i + (300 + 50 * 12)) + 80, 90);
+        fill(0);
+        textSize(15);
+        text(`${ye[i]} ${i > 3 && i < 7 ? "" : "."}`, (50 * i + (295 + 50 * 12)) + 75 , 70);
+    }
     for(let j = 0; j< testList.length; j++){  
         textSize(15);
-        text(nameA[j], 50, 55 * j + 115);    
+        text(nameA[j], 50, 55 * j + 125);    
     for(let i = 0; i < testList[j].length; i++){
         let d = i % 3 === 0;
         testList[j][i].draw(j, i, d);
