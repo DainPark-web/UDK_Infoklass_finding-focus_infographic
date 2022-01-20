@@ -1,12 +1,15 @@
 //data
-const nameA = ["Alkoholfreies Bier, Malzbier und Ähnliches",
+
+const time = [
+    "2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03","2021-04","2021-05","2021-06","2021-07","2021-08","2021-09","2021-10","2021-11"
+]
+const nameA = ["Alkoholfreies Bier",
     "Alkoholische Getränke",
-    
     "Andere weinhaltige Getränke",
     "Bier",
     "Biermixgetränke",
-    "Erfrischungsmixgetränke, unter 6% Alkoholgehalt",
-    "Liköre und andere Spirituosen",
+    "Erfrischungsmixgetränke",
+    "Liköre",
     "Spirituosen",
    
     "Traubenwein",
@@ -14,7 +17,7 @@ const nameA = ["Alkoholfreies Bier, Malzbier und Ähnliches",
     "Wein",
     "Wein aus anderen Früchten",
     "Wein, über 15% Alkoholgehalt",
-    "Weizenbier, Altbier und anderes Bier"];
+    "Weizenbier"];
 // const nameA = ["Alkoholfreies Bier, Malzbier und Ähnliches",
 //     "Alkoholische Getränke",
 //     "Alkoholische Getränke und Tabakwaren",
@@ -70,7 +73,7 @@ const data = [
 //     {a : [108.4,108.5,108.6,109.1,110.2,108.3,106.6,107.7,107,108.1,106.4,107.9,106.4,108.2,110.5,108.9,111.3,111.4,109.9,111.4,110.7,109.9,110.7]}
 
 // ];
-
+const ye = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
 const Con = document.querySelector("#canvasContainer");
 let WIDTH = window.innerWidth;
@@ -78,7 +81,7 @@ let HEIGHT = window.innerHeight;
 
 let balls = [];
 let dis = 0;
-let ballSizeN = 5;
+let ballSizeN = 6;
 
 
 let testList = [];
@@ -112,12 +115,21 @@ function setup(){
     background("#D5DEEB");
     pop();
  
-    
+
+        textSize(18);
+        text("2020", 300 + (50 * 11)/2 , 40);
+    for(let i = 0; i < 12; i++){
+        stroke(0);
+        line(50 * i + 300, 75, 50 * i + 300, 90);
+        fill(0);
+        textSize(15);
+        text(`${ye[i]} ${i > 3 && i < 7 ? "" : "."}`, 50 * i + 295 , 70);
+    }
     for(let j = 0; j< testList.length; j++){  
-        textSize(10);
-        text(nameA[j].slice(0, 5), 10, 60 * j + 50);    
+        textSize(15);
+        text(nameA[j], 50, 55 * j + 115);    
     for(let i = 0; i < testList[j].length; i++){
-        let d = i % 4 === 0;
+        let d = i % 3 === 0;
         testList[j][i].draw(j, i, d);
         
     }
@@ -134,5 +146,5 @@ function draw(){
 function windowResized() {
     WIDTH = window.innerWidth;
     HEIGHT = window.innerHeight;
-    resizeCanvas(HEIGHT, HEIGHT);
+    resizeCanvas(WIDTH, HEIGHT);
   }

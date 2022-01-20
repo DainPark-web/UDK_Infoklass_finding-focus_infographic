@@ -8,10 +8,17 @@ class Ball {
         push();
         colorMode(HSB, 400);
         strokeWeight(1);
-        stroke(0);
+        if(d){
+            fill(0, 60, 0 );
+            textSize(7);
+            noStroke();
+            text(time[i].slice(5), this.pos.x + 280, this.pos.y * j + 50 - (this.size/2 + 10)); 
+        }
+        
         fill(309, 60, d ? 400 : 0 );
         // noFill();
-        circle(this.pos.x + 50 , this.pos.y * j + 50 , this.size);
+        stroke(0); 
+        circle(this.pos.x + 280 , this.pos.y * j + 50 , this.size);
         pop();
         
     }
