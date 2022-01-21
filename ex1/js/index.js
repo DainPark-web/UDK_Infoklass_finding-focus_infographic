@@ -81,7 +81,7 @@ let HEIGHT = window.innerHeight;
 
 let balls = [];
 let dis = 0;
-let ballSizeN = 4;
+let ballSizeN = 5;
 
 
 let testList = [];
@@ -118,9 +118,9 @@ function setup(){
     
     for(let j = 0; j< testList.length; j++){  
         textSize(15);
-        text(nameA[j], 50, 50 * j + 105);    
+        text(nameA[j], 50, 60 * j + 55);    
     for(let i = 0; i < testList[j].length; i++){
-        let d = i % 3 === 0;
+        let d = i % 4 === 0;
         testList[j][i].draw(j, i, d);
         
     }

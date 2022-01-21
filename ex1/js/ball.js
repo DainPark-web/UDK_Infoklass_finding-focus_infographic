@@ -1,6 +1,6 @@
 class Ball {
     constructor(dis, size){
-        this.pos = createVector(50, 50);
+        this.pos = createVector(dis, 60);
         this.size = size;
     }
 
@@ -12,13 +12,13 @@ class Ball {
             fill(0, 60, 0 );
             textSize(7);
             noStroke();
-            text(time[i].slice(5), this.pos.x *i + (i < 12 ? 260 : 350 ) , this.pos.y * j +110 - (this.size/2 + 10)); 
+            text(time[i].slice(5), this.pos.x + 280, this.pos.y * j + 50 - (this.size/2 + 10)); 
         }
         
         fill(309, 60, d ? 400 : 0 );
         // noFill();
         stroke(0); 
-        circle(this.pos.x *i + (i < 12 ? 260 : 350 ), this.pos.y * j + 110 , this.size);
+        circle(this.pos.x + 280 , this.pos.y * j + 50 , this.size);
         pop();
         
     }

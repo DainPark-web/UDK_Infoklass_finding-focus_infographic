@@ -1,6 +1,6 @@
 class Ball {
     constructor(dis, size){
-        this.pos = createVector(50, 55);
+        this.pos = createVector(50, 75);
         this.size = size;
     }
 
@@ -24,7 +24,7 @@ class Ball {
         }
         // noFill();
         
-        circle(this.pos.x *i + (i < 12 ? 300 : 380 ), this.pos.y * j + 120 , this.size);
+        circle(this.pos.x *i + (i < 12 ? 300 : 380 ), this.pos.y * j + 150 , this.size);
         pop();
         
     }
