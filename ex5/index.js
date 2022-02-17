@@ -65,15 +65,15 @@ svg
 .attr("transform",`translate(${gXscale(4)},150 )`)
 .classed("circle4", true);
 
-svg
-.append("g")
-.selectAll("text")
+d3
+.select(".titleBox")
+.selectAll("div")
 .data(titles)
-.join("text")
-.text(function(e) {return e})
-.attr("x", function(e,i){ return gtXscale(i + 1) })
-.attr("y", 80)
-.style("position", "fixed")
+.join("div")
+.text(function(d){return d})
+.style("text-align", "left")
+
+
 
 function dateChange(e, r){
     let dateYscale = d3.scaleLinear().domain([0, time.length]).range([0, e]);

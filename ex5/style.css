@@ -15,7 +15,14 @@ body{
     height: 800px;
     overflow: scroll;
 }
-
+.titleBox{
+    position: fixed;
+    top: 79px;
+    left: 550px;
+    display: flex;
+    gap: 70px;
+    
+}
 ::-webkit-scrollbar{
     width: 0;  /* Remove scrollbar space */
     background: transparent; 
